@@ -32,7 +32,7 @@ pipeline {
                     } else {
                         bat '''
                             python -m venv venv
-                            call venv\\Scripts\\activate
+                            call venv\\Scripts\\activate.bat
                             python -m pip install --upgrade pip
                             pip install -r requirements.txt
                             python -m py_compile app.py
@@ -49,12 +49,12 @@ pipeline {
                     if (isUnix()) {
                         sh '''
                             . venv/bin/activate
-                            pytest tests/test_app.py -v --junitxml=test-results.xml
+                            python3 -m pytest tests/test_app.py -v --junitxml=test-results.xml || python -m pytest tests/test_app.py -v --junitxml=test-results.xml
                         '''
                     } else {
                         bat '''
-                            call venv\\Scripts\\activate
-                            pytest tests/test_app.py -v --junitxml=test-results.xml
+                            call venv\\Scripts\\activate.bat
+                            python -m pytest tests/test_app.py -v --junitxml=test-results.xml
                         '''
                     }
                 }
