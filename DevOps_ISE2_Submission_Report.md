@@ -160,7 +160,7 @@ Initialized empty Git repository in C:/Users/.../MLOps ISE 2/.git/
 #### 1. Environment Setup
 1. **Create Repository**:
    - Log in to [GitHub](https://github.com) and click **New Repository**.
-   - Set Repository Name: `student-performance-devops`
+   - Set Repository Name: `MLOps-ISE-2`
    - Set visibility to **Public** or **Private** (do not initialize with README/.gitignore as they already exist locally).
 2. **Authentication Setup**:
    - Windows uses **Git Credential Manager (GCM)** by default. When prompted on first push, complete the browser-based single-sign-on or enter a GitHub Personal Access Token (PAT with `repo` scope).
@@ -169,8 +169,7 @@ Initialized empty Git repository in C:/Users/.../MLOps ISE 2/.git/
 
 ```powershell
 # 1. Link local repository to remote GitHub repository
-# Replace REPOSITORY_URL with your actual GitHub URL (HTTPS or SSH)
-git remote add origin https://github.com/<YourGitHubUsername>/student-performance-devops.git
+git remote add origin https://github.com/ShivPardeshi/MLOps-ISE-2.git
 
 # 2. Verify remote configuration
 git remote -v
@@ -187,13 +186,12 @@ git pull origin main
 
 #### 3. Expected Verification Output
 ```text
-origin  https://github.com/YourUsername/student-performance-devops.git (fetch)
-origin  https://github.com/YourUsername/student-performance-devops.git (push)
-Enumerating objects: 15, done.
-Counting objects: 100% (15/15), done.
-Writing objects: 100% (15/15), 3.50 MiB | 4.20 MiB/s, done.
-Total 15 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/YourUsername/student-performance-devops.git
+origin  https://github.com/ShivPardeshi/MLOps-ISE-2.git (fetch)
+origin  https://github.com/ShivPardeshi/MLOps-ISE-2.git (push)
+Enumerating objects: 30, done.
+Counting objects: 100% (30/30), done.
+Writing objects: 100% (30/30), done.
+To github.com:ShivPardeshi/MLOps-ISE-2.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 ```
@@ -301,7 +299,7 @@ docker run -d -p 8080:8080 -p 50000:50000 `
 4. Click **New Item** → Name: `student-app-pipeline` → Select **Pipeline** → Click **OK**.
 5. Under **Pipeline Definition**, select **Pipeline script from SCM**:
    - SCM: **Git**
-   - Repository URL: `https://github.com/<YourUsername>/student-performance-devops.git`
+   - Repository URL: `https://github.com/ShivPardeshi/MLOps-ISE-2.git`
    - Branch Specifier: `*/main`
    - Script Path: `Jenkinsfile`
 6. Click **Save** and trigger build via **Build Now**.
