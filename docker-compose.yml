@@ -1,0 +1,19 @@
+services:
+  student-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: student-app:latest
+    container_name: student-app
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - FLASK_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
